@@ -2,7 +2,7 @@
 
 **A cloud operations reliability dashboard** for service health scoring, latency/error monitoring, incident timelines, anomaly detection, deployment impact analysis, runbook recommendations and an executive RAG status report.
 
-> 🔗 **Live demo:** _add your Streamlit Cloud link here after deployment_
+> 🔗 **Live demo:** [Open the CloudOps / AIOps Reliability app](https://cloudops-aiops-reliability-dashboard.streamlit.app/)
 
 ---
 
@@ -22,6 +22,14 @@ This project simulates a cloud operations environment with synthetic telemetry a
 - prioritized alert queue
 - runbook recommendations with owners and priorities
 - downloadable executive status report
+
+## Live demo workflow
+
+1. Open the live app.
+2. Select a scenario preset in the sidebar, such as **Deployment risk week**, **Alert storm** or **Regional latency spike**.
+3. Adjust telemetry history and seed.
+4. Click **Run AIOps simulation**.
+5. Walk through service health, anomaly detection, deployment impact, runbooks and executive status reporting.
 
 ## Dashboard pages
 
@@ -61,16 +69,6 @@ Run tests:
 
 ```bash
 pytest -v
-```
-
-## Deploy to Streamlit Cloud
-
-Use:
-
-```text
-Repository: Samadritaacharya/cloudops-aiops-reliability-dashboard
-Branch: main
-Main file path: app.py
 ```
 
 ## Why this project is relevant to my target roles
