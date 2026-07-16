@@ -1,97 +1,114 @@
 # CloudOps / AIOps Reliability Dashboard
 
-**A cloud operations reliability dashboard** for service health scoring, latency/error monitoring, incident timelines, anomaly detection, deployment impact analysis, runbook recommendations and an executive RAG status report.
+A cloud-operations reliability application for service-health scoring, latency and error monitoring, incident timelines, anomaly detection, deployment-impact analysis, runbook recommendations, and executive RAG reporting.
 
-> 🔗 **Live demo:** [Open the CloudOps / AIOps Reliability app](https://cloudops-aiops-reliability-dashboard.streamlit.app/)
+[![Python CI](https://github.com/Samadritaacharya/cloudops-aiops-reliability-dashboard/actions/workflows/ci.yml/badge.svg)](https://github.com/Samadritaacharya/cloudops-aiops-reliability-dashboard/actions/workflows/ci.yml)
 
----
+**Live application:** [cloudops-aiops-reliability-dashboard.streamlit.app](https://cloudops-aiops-reliability-dashboard.streamlit.app/)  
+**Validation evidence:** [VALIDATION_REPORT.md](VALIDATION_REPORT.md)  
+**Portfolio owner:** [Samadrita Acharya](https://www.linkedin.com/in/samadrita-acharya-a07266184/)
+
+## Recruiter quick view
+
+| Area | Evidence in this project |
+|---|---|
+| Business problem | Cloud teams need to turn noisy telemetry, incidents, alerts, and deployment signals into clear operational priorities. |
+| Product solution | A seven-page Streamlit reliability dashboard using synthetic cloud telemetry and incident data. |
+| AIOps analytics | Rolling z-score and Isolation Forest anomaly detection, alert prioritization, and service-health scoring. |
+| Change reliability | Before/after deployment analysis and change-failure indicators. |
+| Operational action | Runbook recommendations with owners and priorities plus an executive Markdown status report. |
+| Engineering | Modular Python, automated tests, GitHub Actions, Docker support, and documented validation. |
+| Data/privacy | All telemetry, incidents, and deployments are synthetic. |
 
 ## Business problem
 
-Cloud teams often work with noisy telemetry, frequent deployments and many alerts. Leadership needs a clear view of which services are healthy, which deployments caused risk, which anomalies matter and what action should be taken next.
+Cloud teams work across high-volume telemetry, frequent deployments, alert noise, and distributed service ownership. The key challenge is not displaying more charts; it is deciding which services require attention, which changes increased risk, and what action should happen next.
 
 ## Solution
 
-This project simulates a cloud operations environment with synthetic telemetry and turns it into a practical AIOps-style reliability dashboard:
+The application simulates a cloud operations environment and provides:
 
-- service health scoring with Red/Amber/Green status
-- service metrics for latency, error rate, CPU, memory and traffic
-- incident timeline by severity and owning team
-- anomaly detection using rolling z-scores and Isolation Forest
-- deployment/change impact analysis
-- prioritized alert queue
-- runbook recommendations with owners and priorities
-- downloadable executive status report
+- Red/Amber/Green service-health scoring
+- latency, error-rate, CPU, memory, traffic, and uptime views
+- severity-coded incident timelines and team ownership
+- rolling z-score and Isolation Forest anomaly detection
+- prioritized alert queues
+- deployment and change-impact analysis
+- signal-to-runbook recommendations
+- downloadable executive status reports
 
-## Live demo workflow
+## Two-minute recruiter demo
 
-1. Open the live app.
-2. Select a scenario preset in the sidebar, such as **Deployment risk week**, **Alert storm** or **Regional latency spike**.
-3. Adjust telemetry history and seed.
-4. Click **Run AIOps simulation**.
-5. Walk through service health, anomaly detection, deployment impact, runbooks and executive status reporting.
+1. Open the [live app](https://cloudops-aiops-reliability-dashboard.streamlit.app/).
+2. Select **Deployment risk week**, **Alert storm**, or **Regional latency spike**.
+3. Click **Run AIOps simulation**.
+4. Review service health and telemetry signals.
+5. Explain the anomaly and deployment-impact findings.
+6. Finish with the recommended runbooks and executive RAG report.
 
 ## Dashboard pages
 
-| # | Page | What it shows |
-|---|------|---------------|
-| 1 | Reliability Overview | Service health, uptime and alert summary |
-| 2 | Service Metrics | Latency, error rate, CPU, memory and traffic |
-| 3 | Incident Timeline | Severity-coded incidents and ownership |
-| 4 | Anomaly Detection | Anomalies and prioritized alert queue |
-| 5 | Deployment & Change Impact | Before/after deployment impact and change failure indicators |
-| 6 | Runbook Recommendations | Signal-to-action recommendations |
-| 7 | Executive Status Report | RAG status and downloadable Markdown report |
-
-## Tech stack
-
-`Python` · `Streamlit` · `Pandas` · `NumPy` · `Plotly` · `scikit-learn` · `pytest` · `Docker`
+| # | Page | Decision supported |
+|---|---|---|
+| 1 | Reliability Overview | Which services currently need attention? |
+| 2 | Service Metrics | Which technical signals explain degraded health? |
+| 3 | Incident Timeline | What happened, with what severity, and who owns it? |
+| 4 | Anomaly Detection | Which unusual signals should be prioritized? |
+| 5 | Deployment & Change Impact | Did a recent deployment increase operational risk? |
+| 6 | Runbook Recommendations | What operational response should happen next? |
+| 7 | Executive Status Report | What should leadership understand and decide? |
 
 ## Validation status
 
-Tested before publication:
+The repository includes a documented pre-publication validation report:
 
 - `11/11` pytest tests passed
-- `7/7` Streamlit pages rendered successfully
-- Streamlit app booted successfully
-- Health endpoint returned `200 ok`
+- `7/7` Streamlit pages rendered with Streamlit AppTest
+- Streamlit server started successfully
+- health endpoint returned `200 ok`
+- telemetry generation, anomaly detection, service-health scoring, deployment impact, and runbook recommendations were verified
 
-## How to run locally
+See [VALIDATION_REPORT.md](VALIDATION_REPORT.md) for the recorded validation scope. GitHub Actions now reruns the test suite for future changes.
+
+## Technology stack
+
+`Python` · `Streamlit` · `Pandas` · `NumPy` · `Plotly` · `scikit-learn` · `pytest` · `GitHub Actions` · `Docker`
+
+## Run locally
 
 ```bash
 git clone https://github.com/Samadritaacharya/cloudops-aiops-reliability-dashboard.git
 cd cloudops-aiops-reliability-dashboard
-pip install -r requirements.txt
-streamlit run app.py
+python -m venv .venv
 ```
-
-Run tests:
 
 ```bash
-pytest -v
+# Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+
+# macOS/Linux
+source .venv/bin/activate
 ```
 
-## Why this project is relevant to my target roles
+```bash
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -m pytest -q
+python -m streamlit run app.py
+```
 
-This project connects directly to my SAP Cloud Delivery Architecture / AIOps PMO experience. It demonstrates practical thinking for cloud operations, AIOps, incident management, reliability reporting, runbook ownership and technical project coordination.
+## Skills demonstrated
 
-Relevant target roles:
+Cloud operations · AIOps · observability · anomaly detection · incident management · deployment/change analysis · service reliability · RAG reporting · operational runbooks · PMO coordination · Python engineering · executive communication
 
-- Cloud Operations Analyst
-- AIOps / Observability Associate
-- Technical Project Coordinator
-- PMO Analyst
-- Digital Transformation Associate
-- Site Reliability / Operations-adjacent junior roles
+## Why this project is relevant to my profile
 
-## CV bullet
+This project connects directly to my SAP Cloud Delivery Architecture / AIOps and Sovereign Cloud PMO experience. It demonstrates how technical telemetry can be translated into service-health decisions, incident priorities, runbook ownership, and leadership-ready status reporting.
 
-> Built a CloudOps/AIOps Reliability Dashboard using Python, Streamlit, Pandas, Plotly and scikit-learn to simulate cloud service-health monitoring, anomaly detection, deployment-impact analysis, incident timelines and executive RAG reporting.
+## CV / LinkedIn project description
 
-## Disclaimer
+> Built a tested CloudOps/AIOps Reliability Dashboard using Python, Streamlit, Pandas, Plotly, and scikit-learn to simulate cloud-service monitoring, detect anomalies, analyze deployment impact, prioritize incidents and alerts, recommend runbooks, and generate executive RAG reports.
 
-All telemetry, deployments and incidents are synthetic. No confidential SAP, AWS, IBM, Kyndryl, employer or client data is used.
+## Responsible portfolio use
 
----
-
-**Samadrita Acharya** · [LinkedIn](https://www.linkedin.com/in/samadrita-acharya-a07266184/) · [GitHub](https://github.com/Samadritaacharya)
+All telemetry, incidents, alerts, and deployments are synthetic. The project is independent and contains no confidential SAP, AWS, IBM, Kyndryl, employer, customer, or client data.
